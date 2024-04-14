@@ -1,5 +1,5 @@
 import { Reportes } from "../Reportes";
 
 export interface RealTimeSendNotification {
-    sendRealTimeNotification(reporte: Reportes): Promise<boolean>;
+    sendRealTimeNotification(reporte: any, correo: string): Promise<boolean>;
 }

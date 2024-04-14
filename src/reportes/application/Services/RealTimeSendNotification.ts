@@ -4,7 +4,7 @@ import { RealTimeSNotification } from "../../infrastructure/servicesRealTimeNoti
 export class RealTimeNotificationUseCase {
   constructor(readonly reporteNotifiacion: RealTimeSNotification) {}
 
-  async run(reporte: Reportes) {
-    await this.reporteNotifiacion.sendRealTimeNotification(reporte);
+  async run(reporte: any, correo: string) {
+    await this.reporteNotifiacion.sendRealTimeNotification(reporte, correo);
   }
 }

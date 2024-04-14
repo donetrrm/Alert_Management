@@ -28,7 +28,7 @@ export class CreateReporteUseCase {
       const report = await this.reportesRepository.createReporte(reporte);
       if (report)
         this.sendNotification.run(report, correo);
-        this.sendRealTimeNotification.run(reporte)
+        this.sendRealTimeNotification.run(report, correo)
       return report;
     } catch (error) {
       return null;

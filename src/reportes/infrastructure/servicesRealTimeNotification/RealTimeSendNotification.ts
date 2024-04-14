@@ -11,7 +11,7 @@ export class RealTimeSNotification implements RealTimeSendNotification {
     this.url = process.env.SOCKET_URL;
   }
 
-  async sendRealTimeNotification(reporte: Reportes): Promise<boolean> {
+  async sendRealTimeNotification(reporte: Reportes, correo: string): Promise<boolean> {
     const socket: Socket = io(this.url);
     let conn = false;
     socket.on("connect", () => {
@@ -25,7 +25,8 @@ export class RealTimeSNotification implements RealTimeSendNotification {
           idKit: reporte.idKit,
           camara: reporte.camara,
           movimiento: reporte.movimiento,
-          magnetico: reporte.magnetico
+          magnetico: reporte.magnetico,
+          correo: correo
         });
       });
       
